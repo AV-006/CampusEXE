@@ -35,6 +35,7 @@ const getRankBadge = (rank: number) => {
         variant="default"
         className="bg-slate-400 hover:bg-slate-400 text-slate-900"
       >
+        <Trophy className="w-3.5 h-3.5 mr-1" />
         {rank}
       </Badge>
     );
@@ -45,6 +46,7 @@ const getRankBadge = (rank: number) => {
         variant="default"
         className="bg-orange-400 hover:bg-orange-400 text-orange-900"
       >
+        <Trophy className="w-3.5 h-3.5 mr-1" />
         {rank}
       </Badge>
     );
@@ -62,13 +64,22 @@ const getRankBadge = (rank: number) => {
 
 export default function InteractionPage() {
   const { toast } = useToast();
-  const currentUserPoints = 950; // Mock current user points
+  const [currentUserPoints, setCurrentUserPoints] = useState(1250); // Mock current user points
 
   const handleRedeem = (points: number, description: string) => {
-    toast({
-      title: 'Reward Redemption',
-      description: `You have redeemed ${points} points for "${description}". Enjoy! (This is a simulation)`,
-    });
+    if (currentUserPoints >= points) {
+      setCurrentUserPoints((prevPoints) => prevPoints - points);
+      toast({
+        title: 'Reward Redeemed!',
+        description: `You have spent ${points} points for "${description}".`,
+      });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Not enough points',
+        description: `You need ${points - currentUserPoints} more points to redeem this reward.`,
+      });
+    }
   };
 
   return (
