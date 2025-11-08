@@ -45,3 +45,23 @@ Make sure the following are installed:
 ```bash
 git clone https://github.com/AV-006/CampusEXE.git
 cd CampusEXE
+```
+### 🧩 Step 2 — Install Dependencies
+```bash
+npm i
+```
+### 🧩 Step 3 — Install Firebase tools
+
+```bash
+npm install -g firebase-tools
+firebase login
+```
+### 🧩 Step 4 — Setting up Gemini
+
+```bash
+npm install genkit @genkit-ai/google-genai dotenv
+```
+### 🧩 Step 5 — Setup your environment variables accordingly and run:
+```bash
+npm run dev
+```
