@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useFormStatus } from 'react-dom';
 import { submitFeedback, type FormState } from './actions';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -33,7 +33,7 @@ function SubmitButton() {
 
 export function FeedbackForm() {
   const initialState: FormState = { message: '' };
-  const [state, formAction] = useFormState(submitFeedback, initialState);
+  const [state, formAction] = useActionState(submitFeedback, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
