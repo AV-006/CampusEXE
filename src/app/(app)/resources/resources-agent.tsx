@@ -36,9 +36,8 @@ export function ResourcesAgent() {
 
   useEffect(() => {
     // Reset form after submission
-    if (!useFormStatus().pending) {
-      formRef.current?.reset();
-    }
+    formRef.current?.reset();
+    
     // Scroll to the bottom when new messages are added
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTo({
