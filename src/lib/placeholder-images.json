@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "dashboard-resources",
+      "description": "A collection of books on a shelf",
+      "imageUrl": "https://images.unsplash.com/photo-1709924168698-620ea32c3488?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib29rcyUyMGxpYnJhcnl8ZW58MHx8fHwxNzYyNTYyNzM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "books library"
+    },
+    {
+      "id": "dashboard-interaction",
+      "description": "Students interacting in a classroom",
+      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjI1MjYyOTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students classroom"
+    },
+    {
+      "id": "dashboard-feedback",
+      "description": "A suggestion box",
+      "imageUrl": "https://images.unsplash.com/photo-1762340275877-32d64414d8aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmZWVkYmFjayUyMHN1Z2dlc3Rpb258ZW58MHx8fHwxNzYyNTg4MjgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "feedback suggestion"
+    },
+    {
+      "id": "dashboard-services",
+      "description": "A university campus building",
+      "imageUrl": "https://images.unsplash.com/photo-1680226425348-cedaf70ec06d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYW1wdXMlMjB1bml2ZXJzaXR5fGVufDB8fHx8MTc2MjU4ODI4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "campus university"
+    },
+    {
+      "id": "dashboard-events",
+      "description": "A crowd at a college event",
+      "imageUrl": "https://images.unsplash.com/photo-1522158637959-30385a09e0da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxldmVudCUyMGNvbmNlcnR8ZW58MHx8fHwxNzYyNTY3ODc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "event concert"
+    },
+    {
+      "id": "event-music-fest",
+      "description": "A music festival stage with lights",
+      "imageUrl": "https://images.unsplash.com/photo-1506157786151-b8491531f063?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsfGVufDB8fHx8MTc2MjQ4MjE2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "event-hackathon",
+      "description": "People working on laptops at a hackathon",
+      "imageUrl": "https://images.unsplash.com/photo-1564931768730-7e4d8e240044?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoYWNrYXRob24lMjBjb2RlfGVufDB8fHx8MTc2MjU4ODI4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hackathon code"
+    },
+    {
+      "id": "event-sports-day",
+      "description": "Athletes on a running track",
+      "imageUrl": "https://images.unsplash.com/photo-1570004119777-2b1786b0e5bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzcG9ydHMlMjBydW5uaW5nfGVufDB8fHx8MTc2MjU1OTk3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sports running"
+    }
+  ]
 }
