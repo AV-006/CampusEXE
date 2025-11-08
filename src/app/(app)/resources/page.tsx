@@ -88,8 +88,8 @@ export default function ResourcesPage() {
                   </AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2 pl-4">
-                      {category.items.map((item) => (
-                        <li key={item.title} className="flex justify-between items-center text-sm">
+                      {category.items.map((item, index) => (
+                        <li key={`${item.title}-${index}`} className="flex justify-between items-center text-sm">
                           <span>{item.title}</span>
                           <span className="text-muted-foreground text-xs">
                             {item.type} &middot; {item.size}
