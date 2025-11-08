@@ -1,6 +1,6 @@
 # 🎓 CampusExe
 
-> Your AI-powered Campus Management System  
+> An AI-powered Campus Management System  
 > **CampusExe** is a multi-agent AI system designed to improve daily life in colleges and universities — bridging communication gaps, enhancing student engagement, and automating faculty-student interactions.
 
 ---
