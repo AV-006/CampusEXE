@@ -33,14 +33,18 @@ export function MainNav() {
             : pathname.startsWith(item.href);
         return (
           <SidebarMenuItem key={item.href}>
-            <Link href={item.href} passHref legacyBehavior>
-              <SidebarMenuButton asChild isActive={isActive} tooltip={item.label}>
-                <a>
-                  <Icon />
-                  <span>{item.label}</span>
-                </a>
-              </SidebarMenuButton>
-            </Link>
+            <SidebarMenuButton
+              asChild
+              isActive={isActive}
+              tooltip={item.label}
+              as={Link}
+              href={item.href}
+            >
+              <>
+                <Icon />
+                <span>{item.label}</span>
+              </>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         );
       })}
