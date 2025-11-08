@@ -20,12 +20,12 @@ function SubmitButton() {
   );
 }
 
-export function ResourcesAgent() {
+export function ServicesAgent() {
   const initialState: AgentState = {
     messages: [
       {
         role: 'assistant',
-        content: "Hello! I'm your AI Tutor. I can help you create a learning plan. What topic are you interested in?",
+        content: "Hello! I'm the Campus Services agent. Ask me about the library, canteen, or gym.",
       },
     ],
   };
@@ -40,9 +40,8 @@ export function ResourcesAgent() {
       formRef.current?.reset();
     }
   }, [pending]);
-  
+
   useEffect(() => {
-    // Scroll to the bottom when new messages are added
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTo({
         top: scrollAreaRef.current.scrollHeight,
@@ -51,13 +50,12 @@ export function ResourcesAgent() {
     }
   }, [state.messages]);
 
-
   return (
     <Card className="flex flex-col h-[calc(100vh-12rem)]">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 font-headline">
           <Bot />
-          AI Tutor
+          Services Agent
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow overflow-hidden">
@@ -73,7 +71,7 @@ export function ResourcesAgent() {
                 {message.role === 'assistant' && (
                   <Avatar className="w-8 h-8 bg-primary text-primary-foreground">
                     <AvatarFallback>
-                      <Bot className="w-5 h-5"/>
+                      <Bot className="w-5 h-5" />
                     </AvatarFallback>
                   </Avatar>
                 )}
@@ -87,15 +85,15 @@ export function ResourcesAgent() {
                   <p className="text-sm">{message.content}</p>
                 </div>
                 {message.role === 'user' && (
-                   <Avatar className="w-8 h-8">
+                  <Avatar className="w-8 h-8">
                     <AvatarFallback>
-                      <User className="w-5 h-5"/>
+                      <User className="w-5 h-5" />
                     </AvatarFallback>
                   </Avatar>
                 )}
               </div>
             ))}
-             {pending && (
+            {pending && (
               <div className="flex justify-start">
                  <Avatar className="w-8 h-8 bg-primary text-primary-foreground">
                     <AvatarFallback>
@@ -112,7 +110,7 @@ export function ResourcesAgent() {
       </CardContent>
       <CardFooter>
         <form action={formAction} ref={formRef} className="flex w-full gap-2">
-          <Input name="query" placeholder="e.g., 'Help me with algorithms'" required />
+          <Input name="query" placeholder="e.g., 'What's for lunch?'" required />
           <SubmitButton />
         </form>
       </CardFooter>

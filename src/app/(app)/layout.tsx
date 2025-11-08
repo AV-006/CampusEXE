@@ -44,7 +44,7 @@ export default function AppLayout({
         <SidebarInset>
           <header className="sticky top-0 z-10 flex items-center h-14 px-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
             <SidebarTrigger />
-            <div className="flex-1 text-center font-bold">CampusConnect</div>
+            <div className="flex-1 text-center font-bold">CampusExe</div>
           </header>
           <main className="flex-1 p-4 sm:p-6 lg:p-8">{children}</main>
         </SidebarInset>

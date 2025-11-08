@@ -1,6 +1,6 @@
 'use server';
 
-import { askTutorAgent } from '@/ai/flows/tutor-agent-flow';
+import { askServicesAgent } from '@/ai/flows/services-agent-flow';
 import { z } from 'zod';
 
 export type AgentState = {
@@ -34,7 +34,7 @@ export async function askAgent(prevState: AgentState, data: FormData): Promise<A
   const newMessages = [...prevState.messages, { role: 'user' as const, content: userQuery }];
 
   try {
-    const result = await askTutorAgent({
+    const result = await askServicesAgent({
       history: prevState.messages,
       query: userQuery,
     });
