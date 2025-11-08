@@ -89,7 +89,7 @@ const askServicesAgentFlow = ai.defineFlow(
     outputSchema: AskServicesAgentOutputSchema,
   },
   async (input) => {
-    const { output } = await prompt(input);
+    const {output} = await prompt(input);
     return output!;
   }
 );
