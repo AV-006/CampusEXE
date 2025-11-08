@@ -36,6 +36,14 @@ export default function ResourcesPage() {
       const categoryIndex = newResources.findIndex(cat => cat.category === newResource.category);
 
       if (categoryIndex !== -1) {
+        // Prevent adding duplicate titles within the same category
+        const existingItem = newResources[categoryIndex].items.find(item => item.title.toLowerCase() === newResource.title.toLowerCase());
+        if (existingItem) {
+          // This case should be handled in the dialog, but as a safeguard:
+          console.error("Duplicate resource detected.");
+          return prevResources;
+        }
+
         newResources[categoryIndex].items.push({
           title: newResource.title,
           type: 'PDF', // Mock data
@@ -66,7 +74,7 @@ export default function ResourcesPage() {
                 Here's a list of all the materials you can ask the AI Tutor about.
               </CardDescription>
             </div>
-            <UploadResourceDialog onAddResource={handleAddResource}>
+            <UploadResourceDialog onAddResource={handleAddResource} resources={resources}>
               <Button>
                 <Upload className="mr-2 h-4 w-4" />
                 Upload Resource

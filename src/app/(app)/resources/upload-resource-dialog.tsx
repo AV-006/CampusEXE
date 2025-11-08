@@ -21,14 +21,15 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { resources } from '@/lib/mock-data';
+import type { ResourceCategory } from '@/lib/mock-data';
 
 interface UploadResourceDialogProps {
   children: React.ReactNode;
   onAddResource: (newResource: { title: string, category: string }) => void;
+  resources: ResourceCategory[];
 }
 
-export function UploadResourceDialog({ children, onAddResource }: UploadResourceDialogProps) {
+export function UploadResourceDialog({ children, onAddResource, resources }: UploadResourceDialogProps) {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -42,6 +43,20 @@ export function UploadResourceDialog({ children, onAddResource }: UploadResource
         variant: 'destructive',
         title: 'Incomplete form',
         description: 'Please fill out all fields and select a file.',
+      });
+      return;
+    }
+
+    const categoryData = resources.find(cat => cat.category === category);
+    const isDuplicate = categoryData?.items.some(
+      item => item.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (isDuplicate) {
+      toast({
+        variant: 'destructive',
+        title: 'Duplicate Resource',
+        description: `A resource with the title "${title}" already exists in the "${category}" category.`,
       });
       return;
     }
@@ -60,6 +75,8 @@ export function UploadResourceDialog({ children, onAddResource }: UploadResource
     setFile(null);
     setOpen(false);
   };
+  
+  const availableCategories = resources.map((cat) => cat.category);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -94,9 +111,9 @@ export function UploadResourceDialog({ children, onAddResource }: UploadResource
                   <SelectValue placeholder="Select a category" />
                 </SelectTrigger>
                 <SelectContent>
-                  {resources.map((cat) => (
-                    <SelectItem key={cat.category} value={cat.category}>
-                      {cat.category}
+                  {availableCategories.map((cat) => (
+                    <SelectItem key={cat} value={cat}>
+                      {cat}
                     </SelectItem>
                   ))}
                 </SelectContent>
