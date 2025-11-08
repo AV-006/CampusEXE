@@ -7,6 +7,7 @@ import {
   SidebarFooter,
   SidebarInset,
   SidebarTrigger,
+  SidebarRail,
 } from '@/components/ui/sidebar';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Logo } from '@/components/logo';
@@ -20,6 +21,7 @@ export default function AppLayout({
     <SidebarProvider>
       <div className="flex min-h-screen">
         <Sidebar>
+          <SidebarRail />
           <SidebarHeader>
             <Logo />
           </SidebarHeader>
