@@ -1,5 +1,8 @@
+'use client';
+
+import { useState } from 'react';
 import { ResourcesAgent } from './resources-agent';
-import { resources } from '@/lib/mock-data';
+import { resources as initialResources } from '@/lib/mock-data';
 import {
   Card,
   CardContent,
@@ -13,7 +16,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { FileText, Presentation, Book } from 'lucide-react';
+import { FileText, Presentation, Book, Upload } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { UploadResourceDialog } from './upload-resource-dialog';
+import type { ResourceCategory } from '@/lib/mock-data';
 
 const categoryIcons: { [key: string]: React.ReactNode } = {
   'Course Notes': <FileText className="w-5 h-5 mr-2" />,
@@ -22,6 +28,24 @@ const categoryIcons: { [key: string]: React.ReactNode } = {
 };
 
 export default function ResourcesPage() {
+  const [resources, setResources] = useState<ResourceCategory[]>(initialResources);
+
+  const handleAddResource = (newResource: { title: string, category: string }) => {
+    setResources(prevResources => {
+      const newResources = [...prevResources];
+      const categoryIndex = newResources.findIndex(cat => cat.category === newResource.category);
+
+      if (categoryIndex !== -1) {
+        newResources[categoryIndex].items.push({
+          title: newResource.title,
+          type: 'PDF', // Mock data
+          size: `${(Math.random() * 5 + 1).toFixed(1)}MB`, // Mock data
+        });
+      }
+      return newResources;
+    });
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <div className="md:col-span-2 space-y-8">
@@ -35,14 +59,22 @@ export default function ResourcesPage() {
         </div>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Available Resources</CardTitle>
-            <CardDescription>
-              Here's a list of all the materials you can ask the AI Tutor about.
-            </CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle>Available Resources</CardTitle>
+              <CardDescription>
+                Here's a list of all the materials you can ask the AI Tutor about.
+              </CardDescription>
+            </div>
+            <UploadResourceDialog onAddResource={handleAddResource}>
+              <Button>
+                <Upload className="mr-2 h-4 w-4" />
+                Upload Resource
+              </Button>
+            </UploadResourceDialog>
           </CardHeader>
           <CardContent>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full" defaultValue="Course Notes">
               {resources.map((category) => (
                 <AccordionItem
                   key={category.category}

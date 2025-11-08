@@ -3,6 +3,17 @@ import { PlaceHolderImages } from './placeholder-images';
 
 const getImage = (id: string): ImagePlaceholder | undefined => PlaceHolderImages.find(img => img.id === id);
 
+export type ResourceItem = {
+  title: string;
+  type: string;
+  size: string;
+};
+
+export type ResourceCategory = {
+  category: string;
+  items: ResourceItem[];
+};
+
 export const navItems = [
   { label: 'Dashboard', href: '/', icon: 'LayoutDashboard' },
   { label: 'Resources', href: '/resources', icon: 'BookCopy' },
@@ -12,7 +23,7 @@ export const navItems = [
   { label: 'Events', href: '/events', icon: 'Calendar' },
 ];
 
-export const resources = [
+export const resources: ResourceCategory[] = [
   {
     category: 'Course Notes',
     items: [
