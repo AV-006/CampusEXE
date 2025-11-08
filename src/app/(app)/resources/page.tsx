@@ -36,14 +36,6 @@ export default function ResourcesPage() {
       const categoryIndex = newResources.findIndex(cat => cat.category === newResource.category);
 
       if (categoryIndex !== -1) {
-        // Prevent adding duplicate titles within the same category
-        const existingItem = newResources[categoryIndex].items.find(item => item.title.toLowerCase() === newResource.title.toLowerCase());
-        if (existingItem) {
-          // This case should be handled in the dialog, but as a safeguard:
-          console.error("Duplicate resource detected.");
-          return prevResources;
-        }
-
         newResources[categoryIndex].items.push({
           title: newResource.title,
           type: 'PDF', // Mock data
@@ -62,7 +54,7 @@ export default function ResourcesPage() {
             Resources Hub
           </h1>
           <p className="text-muted-foreground">
-            Your digital library for course materials, managed by faculty. Ask the AI Tutor for a personalized learning plan!
+            Your digital library for course materials, managed by faculty.
           </p>
         </div>
 
@@ -71,7 +63,7 @@ export default function ResourcesPage() {
             <div>
               <CardTitle>Available Resources</CardTitle>
               <CardDescription>
-                Here's a list of all the materials you can ask the AI Tutor about.
+                Here's a list of all the materials available for your courses.
               </CardDescription>
             </div>
             <UploadResourceDialog onAddResource={handleAddResource} resources={resources}>
@@ -113,7 +105,14 @@ export default function ResourcesPage() {
         </Card>
       </div>
       <div className="md:col-span-1 sticky top-20">
-        <ResourcesAgent />
+        <Card>
+          <CardHeader>
+            <CardTitle>AI Tutor</CardTitle>
+            <CardDescription>
+              The AI Tutor is currently offline. Please check back later.
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
     </div>
   );
