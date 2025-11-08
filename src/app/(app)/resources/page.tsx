@@ -1,24 +1,78 @@
 import { ResourcesAgent } from './resources-agent';
+import { resources } from '@/lib/mock-data';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { FileText, Presentation, Book } from 'lucide-react';
+
+const categoryIcons: { [key: string]: React.ReactNode } = {
+  'Course Notes': <FileText className="w-5 h-5 mr-2" />,
+  'Presentations': <Presentation className="w-5 h-5 mr-2" />,
+  'Recommended Books': <Book className="w-5 h-5 mr-2" />,
+};
 
 export default function ResourcesPage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <div className="md:col-span-2 space-y-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight font-headline">
             Resources Hub
           </h1>
           <p className="text-muted-foreground">
-            Your digital library for course materials, managed by faculty.
+            Your digital library for course materials, managed by faculty. Ask the AI Tutor for a personalized learning plan!
           </p>
         </div>
-        <p className="text-muted-foreground">
-          This page is managed by the AI Tutor Agent. It can see your recent
-          forum activity to understand what topics you might be struggling with.
-          Ask it for a personalized learning plan!
-        </p>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Available Resources</CardTitle>
+            <CardDescription>
+              Here's a list of all the materials you can ask the AI Tutor about.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              {resources.map((category) => (
+                <AccordionItem
+                  key={category.category}
+                  value={category.category}
+                >
+                  <AccordionTrigger className="font-semibold">
+                    <div className="flex items-center">
+                      {categoryIcons[category.category]}
+                      {category.category}
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2 pl-4">
+                      {category.items.map((item) => (
+                        <li key={item.title} className="flex justify-between items-center text-sm">
+                          <span>{item.title}</span>
+                          <span className="text-muted-foreground text-xs">
+                            {item.type} &middot; {item.size}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </CardContent>
+        </Card>
       </div>
-      <div className="md:col-span-1">
+      <div className="md:col-span-1 sticky top-20">
         <ResourcesAgent />
       </div>
     </div>
