@@ -105,14 +105,7 @@ export default function ResourcesPage() {
         </Card>
       </div>
       <div className="md:col-span-1 sticky top-20">
-        <Card>
-          <CardHeader>
-            <CardTitle>AI Tutor</CardTitle>
-            <CardDescription>
-              The AI Tutor is currently offline. Please check back later.
-            </CardDescription>
-          </CardHeader>
-        </Card>
+        <ResourcesAgent />
       </div>
     </div>
   );
