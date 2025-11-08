@@ -40,10 +40,10 @@ export function MainNav() {
               as={Link}
               href={item.href}
             >
-              <>
+              <span className="flex items-center gap-2">
                 <Icon />
                 <span>{item.label}</span>
-              </>
+              </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         );
