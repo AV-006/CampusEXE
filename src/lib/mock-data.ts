@@ -61,6 +61,13 @@ export const leaderboard = [
   { rank: 10, name: 'Ishani Shah', points: 760, avatar: 'https://picsum.photos/seed/110/40/40' },
 ];
 
+export const rewards = [
+  { points: 500, description: 'Free coffee at the canteen' },
+  { points: 1000, description: 'University merchandise voucher' },
+  { points: 1500, description: 'One-month free gym membership' },
+  { points: 2500, description: 'Priority registration for one course' },
+];
+
 export const feedbackQuestions = [
   { id: 'strengths', label: "What are the instructor's strengths?", placeholder: "e.g., Clear explanations, engaging lectures, very approachable..." },
   { id: 'improvements', label: 'In which areas can the instructor improve?', placeholder: "e.g., Pace of the class, more practical examples..." },
