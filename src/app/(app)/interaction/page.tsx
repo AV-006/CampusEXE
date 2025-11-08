@@ -35,6 +35,14 @@ const getRankBadge = (rank: number) => {
       </Badge>
     );
   }
+  if (rank <= 5) {
+    return (
+      <Badge variant="secondary">
+        <Star className="w-3.5 h-3.5 mr-1" />
+        {rank}
+      </Badge>
+    );
+  }
   return <span className="text-sm text-center w-6">{rank}</span>;
 };
 

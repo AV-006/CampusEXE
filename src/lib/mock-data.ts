@@ -38,16 +38,16 @@ export const resources = [
 ];
 
 export const leaderboard = [
-  { rank: 1, name: 'Alice Johnson', points: 1250, avatar: 'https://picsum.photos/seed/101/40/40' },
-  { rank: 2, name: 'Bob Williams', points: 1120, avatar: 'https://picsum.photos/seed/102/40/40' },
-  { rank: 3, name: 'Charlie Brown', points: 1050, avatar: 'https://picsum.photos/seed/103/40/40' },
-  { rank: 4, name: 'Diana Miller', points: 980, avatar: 'https://picsum.photos/seed/104/40/40' },
-  { rank: 5, name: 'Ethan Davis', points: 950, avatar: 'https://picsum.photos/seed/105/40/40' },
-  { rank: 6, name: 'Fiona Garcia', points: 890, avatar: 'https://picsum.photos/seed/106/40/40' },
-  { rank: 7, name: 'George Rodriguez', points: 850, avatar: 'https://picsum.photos/seed/107/40/40' },
-  { rank: 8, name: 'Hannah Wilson', points: 820, avatar: 'https://picsum.photos/seed/108/40/40' },
-  { rank: 9, name: 'Ian Martinez', points: 780, avatar: 'https://picsum.photos/seed/109/40/40' },
-  { rank: 10, name: 'Jane Anderson', points: 760, avatar: 'https://picsum.photos/seed/110/40/40' },
+  { rank: 1, name: 'Aarav Sharma', points: 1250, avatar: 'https://picsum.photos/seed/101/40/40' },
+  { rank: 2, name: 'Diya Patel', points: 1120, avatar: 'https://picsum.photos/seed/102/40/40' },
+  { rank: 3, name: 'Rohan Gupta', points: 1050, avatar: 'https://picsum.photos/seed/103/40/40' },
+  { rank: 4, name: 'Priya Singh', points: 980, avatar: 'https://picsum.photos/seed/104/40/40' },
+  { rank: 5, name: 'Arjun Kumar', points: 950, avatar: 'https://picsum.photos/seed/105/40/40' },
+  { rank: 6, name: 'Ananya Reddy', points: 890, avatar: 'https://picsum.photos/seed/106/40/40' },
+  { rank: 7, name: 'Vikram Joshi', points: 850, avatar: 'https://picsum.photos/seed/107/40/40' },
+  { rank: 8, name: 'Saanvi Desai', points: 820, avatar: 'https://picsum.photos/seed/108/40/40' },
+  { rank: 9, name: 'Kabir Mehta', points: 780, avatar: 'https://picsum.photos/seed/109/40/40' },
+  { rank: 10, name: 'Ishani Shah', points: 760, avatar: 'https://picsum.photos/seed/110/40/40' },
 ];
 
 export const feedbackQuestions = [
@@ -60,9 +60,9 @@ export const feedbackQuestions = [
 
 export const libraryData = {
   newArrivals: [
-    { title: 'Sapiens: A Brief History of Humankind', author: 'Yuval Noah Harari' },
-    { title: 'Atomic Habits', author: 'James Clear' },
-    { title: 'Project Hail Mary', author: 'Andy Weir' },
+    { title: 'The God of Small Things', author: 'Arundhati Roy' },
+    { title: 'Train to Pakistan', author: 'Khushwant Singh' },
+    { title: 'The White Tiger', author: 'Aravind Adiga' },
   ],
   availableBooks: [
     { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: 'Available' },
@@ -73,9 +73,9 @@ export const libraryData = {
 };
 
 export const canteenMenu = {
-  breakfast: ['Pancakes', 'Omelette', 'Cereal', 'Fresh Fruit'],
-  lunch: ['Chicken Curry with Rice', 'Vegetable Stir-Fry', 'Pasta Alfredo', 'Salad Bar'],
-  dinner: ['Grilled Salmon', 'Beef Stew', 'Lentil Soup', 'Pizza'],
+  breakfast: ['Poha', 'Idli-Sambar', 'Aloo Paratha', 'Masala Chai'],
+  lunch: ['Dal Makhani with Naan', 'Vegetable Biryani', 'Chicken Tikka Masala', 'Raita'],
+  dinner: ['Palak Paneer', 'Roti', 'Jeera Rice', 'Mixed Vegetable Curry'],
 };
 
 export const gymInfo = {
